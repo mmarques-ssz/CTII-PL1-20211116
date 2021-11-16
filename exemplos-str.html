@@ -1,0 +1,105 @@
+<html>
+    <head>
+        <title>Exemplos String</title>
+    </head>
+    <body>
+
+        <font size="6">
+
+        <table border="1">
+            <tr>
+            <td>T</td><td>E</td><td>S</td><td>T</td><td>E</td>
+            </tr>
+        </table>
+
+        <table border="1">
+            <tr><td>T</td></tr>
+            <tr><td>E</td></tr>
+            <tr><td>S</td></tr>
+            <tr><td>T</td></tr>
+            <tr><td>E</td></tr>
+        </table>
+
+        
+        <!-- Caracter: "*" e a Quantidade: 10 -->
+        
+        <table border="1">
+            <tr>
+            <td>**********</td>
+            </tr>
+        </table>
+
+        <table border="1">
+            <tr><td>Qtde de vogais:</td><td>999</td></tr>
+            <tr><td>Qtde de consoantes:</td><td>999</td></tr>
+            <tr><td>Qtde de dígitos:</td><td>999</td></tr>
+            <tr><td>Qtde de outros caracteres:</td><td>999</td></tr>
+        </table>
+
+
+
+
+
+
+        
+        <script language="javascript">
+            var s1, s2, s3, s4, s5;
+            s1 = new String("Teste");
+            s2 = "Mais um Teste";
+
+            document.write(s1);
+            document.write("<br>");
+            document.write(s2);
+            document.write("<br>");
+            document.write(s1.length);
+            document.write("<br>");
+            document.write(s2.length);
+            document.write("<br>");
+            document.write(s1.charAt(0));
+            document.write("<br>");
+            document.write(s2.charAt(1));
+            document.write("<br>");
+            document.write(s1.charCodeAt(0));
+            document.write("<br>");
+            document.write(s2.charCodeAt(1));
+            document.write("<br>");
+            document.write(s2.indexOf("u"));
+            document.write("<br>");
+            document.write(s2.indexOf("s"));
+            document.write("<br>");
+            document.write(s2.indexOf("z"));
+            document.write("<br>");
+            document.write(s2.lastIndexOf("s"));
+            document.write("<br>");
+            document.write(s2.substr(5, 2));
+            document.write("<br>");
+            document.write(s2.substring(5, 7));
+            document.write("<br>");
+            document.write(s2.toLowerCase());
+            document.write("<br>");
+            document.write(s2.toUpperCase());
+            document.write("<br>");
+
+            document.write(s1.concat(" ", s2));
+            document.write("<br>");
+
+            s3 = s2.toLowerCase();
+            s3 = s3.charAt(0).toUpperCase().concat(s3.substr(1, s3.length-1));
+            document.write(s3);
+            document.write("<br>");
+
+            s4 = "Isto é um teste        ";
+            s5 = "Nada";
+            document.write(s4);
+            document.write("<br>");
+            document.write(s5);
+            document.write("<br>");
+
+            s4 = s4.trim();
+
+            document.write(s4.concat(s5));
+            document.write("<br>");
+        </script>
+        </font>
+    </body>
+</html>

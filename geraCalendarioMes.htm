@@ -1,0 +1,111 @@
+<html>
+
+<head>
+ <title>Datas em JavaScript</title>
+<style> 
+table
+{
+border-radius: 5px;
+border-style: solid;
+border-width: 3px;
+}
+
+tr 
+{
+height: 50px;
+}
+
+th
+{
+font-size: 40px;
+border-radius:10px;
+border-style: solid;
+border-width: 1px;
+text-align: center;
+}
+
+td
+{
+font-size: 30px;
+border-radius:10px;
+border-style: solid;
+border-width: 1px;
+border-color: blue;
+text-align: center;
+}
+
+td.vazio
+{
+font-size: 30px;
+border-radius:10px;
+border-style: solid;
+border-width: 1px;
+border-color: white;
+text-align: right;
+}
+
+td.dom
+{
+font-size: 30px;
+border-radius:10px;
+border-style: solid;
+border-width: 1px;
+border-color: red;
+text-align: center;
+background-color: red;
+color: white;
+}
+
+</style>
+</head>
+
+<body>
+<center>
+<script language="javascript">
+  var hoje, data, dia, mes, ano, diaf, vezes, meses;
+  meses = ["JANEIRO", "FEVEREIRO", "MARÇO", "ABRIL", "MAIO", "JUNHO", 
+           "JULHO", "AGOSTO", "SETEMBRO", "OUTUBRO", "NOVEMBRO", "DEZEMBRO"];
+
+  hoje = new Date();
+  ano = window.prompt("Informe o ano: ", hoje.getFullYear());
+  mes = window.prompt("Informe o mês: ", (hoje.getMonth()+1));
+  dia = 1;
+
+  if (mes==1 || mes==3 || mes==5 || mes==7 || mes==8 || mes==10 || mes==12)
+     diaf=31;
+  else
+     if (mes==4 || mes==6 || mes==9 || mes==11)
+        diaf=30;
+     else
+        if (ano % 4 == 0)
+           diaf=29;
+        else
+           diaf=28;
+
+  mes--;
+  data = new Date(ano, mes, dia);
+  document.write("<h1>" + meses[mes] + "/" + ano + "</h1>");
+  document.write("<table><tr>");
+  document.write("<th>DOM</th><th>SEG</th><th>TER</th><th>QUA</th><th>QUI</th><th>SEX</th><th>SAB</th>");
+  document.write("</tr><tr>");
+  for(vezes=1;vezes<=data.getDay();vezes++)
+     document.write("<td class='vazio'></td>");
+  
+  for(dia=1;dia<=diaf;++dia)
+  {
+     if (data.getDay()==0)
+        document.write("<td class='dom'>"); 
+     else
+        document.write("<td>"); 
+
+     document.write(data.getDate() + "</td>");
+     if (data.getDay()==6)
+        document.write( "</tr><tr>" );
+     data.setDate(data.getDate()+1);
+  }
+  document.write("</tr></table>");
+
+</script>
+</center>
+</body>
+</html>
